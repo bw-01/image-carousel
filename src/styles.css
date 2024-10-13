@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  --image-width: 300px;
 }
 
 html,
@@ -11,7 +12,7 @@ body {
 }
 
 img {
-  max-width: 200px;
+  max-width: var(--image-width);
   height: auto;
 }
 
@@ -28,21 +29,40 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  width: calc(var(--image-width) + 80px);
+  margin: 0 auto;
 }
 
 .slide-frame {
-  border: 1px solid blue;
-  width: 200px;
+  width: var(--image-width);
+  overflow: hidden;
+  position: relative;
 }
 
 .slides {
-  border: 1px solid blue;
   display: flex;
-  width: 800px;
+  width: calc(4 * var(--image-width));
+}
+
+.left,
+.right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); 
+  padding: 10px;
+  cursor: pointer;
+}
+
+.left {
+  left: 0; 
+}
+
+.right {
+  right: 0;
 }
 
 .slider {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+margin-top: 10px;
 }
+

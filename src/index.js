@@ -2,11 +2,11 @@ import "./styles.css";
 
 let xPos = 0;
 let slideCount = 4;
-const slideWidth = 200;
+const slideWidth = 300;
 
 function next() {
   const slidesDiv = document.querySelector(".slides");
-  xPos -= 200;
+  xPos -= slideWidth;
   if (xPos <= -(slideCount * slideWidth)) {
     xPos = 0;
   }
@@ -15,7 +15,7 @@ function next() {
 
 function previous() {
   const slidesDiv = document.querySelector(".slides");
-  xPos += 200;
+  xPos += slideWidth;
   if (xPos > 0) {
     xPos = -(slideWidth * (slideCount - 1));
   }
@@ -25,10 +25,5 @@ function previous() {
 const leftButton = document.querySelector(".left");
 const rightButton = document.querySelector(".right");
 
-leftButton.addEventListener("click", () => {
-  previous();
-});
-
-rightButton.addEventListener("click", () => {
-  next();
-});
+leftButton.addEventListener("click", previous);
+rightButton.addEventListener("click", next);
