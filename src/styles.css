@@ -11,7 +11,7 @@ body {
 }
 
 img {
-  max-width: 100%;
+  max-width: 200px;
   height: auto;
 }
 
@@ -24,22 +24,25 @@ a {
   color: inherit;
 }
 
-/* for visual debugging */
-* {
-  border: 1px solid blue;
-}
-
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.slide-frame {
+  border: 1px solid blue;
+  width: 200px;
+}
+
 .slides {
-  width: 600px;
+  border: 1px solid blue;
+  display: flex;
+  width: 800px;
 }
 
 .slider {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 10px;
 }
